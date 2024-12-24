@@ -1,0 +1,14 @@
+<mat-card appearance="outlined" class="card " >
+    <div class="toolbar">
+    <i class="bi bi-pencil-square " (click)="updateSelectedCardDataTrigger()"></i>
+    <i class="bi bi-eye-fill" (click)="viewSelectedCardDataTrigger()"></i>
+    <i class="bi bi-trash-fill" (click)="deleteEventEmitterDataTrigger()" ></i>
+    </div>
+    <mat-card-content>
+        <div><span class="initially "> Task Name : </span> 
+           {{card_data.task_title}}</div>
+        <div><span class="initially"> Task Descreption : </span>{{card_data.task_description}}</div>
+        <div><span class="initially"> Priority : </span>{{card_data.priority}}</div>
+        <div><span class="initially"> Status : </span>{{card_data.status}}</div>
+    </mat-card-content>
+  </mat-card>

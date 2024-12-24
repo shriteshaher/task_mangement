@@ -1,0 +1,45 @@
+@import '../../../styles.scss';
+.form-model{
+    h3{
+        text-align: center;
+    }
+    .error{
+     color: red;
+     min-width: 80%;
+     margin:auto;
+    }
+    i{
+        position: absolute;
+        right: 10px;
+        top: 20px;
+    }
+    .add-tasks-group{
+        display: flex;
+        justify-content: space-between;
+        border: 2px red solid;
+    }
+
+    .form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+       
+        mat-form-field {
+            min-width: 80%;
+            margin: auto;
+           
+          
+        }
+        .mat-form-field-disabled .mdc-text-field--disabled{
+            opacity: 1;
+            border: 2px red solid;
+        }
+        .mdc-button{
+            width: 150px !important;
+            margin: auto;
+            background-color:$background-color ;
+            color: white;
+        }
+    }
+}
+

@@ -1,0 +1,40 @@
+<div class="form-model">
+ 
+    <h3  >{{ isDisabled ? "View Your Task Detail": isUpdate ? "Update Your Task ":"Add Your Tasks"}}</h3>
+  <i class="bi bi-x-lg " (click)="closed()"></i>
+    <form class="form"  [formGroup]="addTaskFormGroup" (ngSubmit)="submitForm()">
+        <mat-form-field appearance="outline" >
+            
+         <input matInput placeholder="Task Title" formControlName="task_title" />
+      
+         </mat-form-field >
+         
+         <mat-form-field appearance="outline" >
+            <textarea matInput placeholder="Text Description" formControlName="task_description"></textarea>
+        
+      </mat-form-field >
+      <mat-form-field appearance="outline"  >
+       
+            <mat-select placeholder="Priority" formControlName="priority">
+              @for (pr of priority; track priority) {
+                <mat-option [value]="pr" >{{pr}}</mat-option>
+              }
+            </mat-select>
+          
+        
+      </mat-form-field >
+      <mat-form-field appearance="outline"  >
+       
+        <mat-select placeholder="status" formControlName="status">
+          @for (st of status; track status) {
+            <mat-option [value]="st" >{{st}}</mat-option>
+          }
+        </mat-select>
+      
+        
+  </mat-form-field >
+  @if(!isDisabled){
+  <button  mat-flat-button type="submit"> {{!isUpdate ? "Add Task":"Update Task"}}</button>
+  }
+    </form>
+</div>

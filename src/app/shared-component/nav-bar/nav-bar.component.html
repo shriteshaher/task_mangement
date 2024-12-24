@@ -1,0 +1,18 @@
+<div class="navbar">
+   <h2>Task Manager</h2>
+   
+   <div class="add-task " > 
+    <div class="filter">
+    <mat-form-field appearance="outline" class="select-form"  >
+       
+        <mat-select placeholder="status"  (selectionChange)="filterByStatus($event)">
+          @for (st of status; track status) {
+            <mat-option [value]="st" >{{st}}</mat-option>
+          }
+        </mat-select>
+    </mat-form-field>
+    
+   </div>
+   <button mat-raised-button (click)=" openModalAddTaskForm()">+ Add Tasks</button></div>
+   
+</div>

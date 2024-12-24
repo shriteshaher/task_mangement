@@ -1,0 +1,10 @@
+<div>
+  <app-nav-bar (filterTextEvent)="getTaskDetails($event)"></app-nav-bar>
+ <div class="content-page" >
+  @for (tasks of task_details; track task_details) {
+  <app-task-card [card_data]="tasks" (deleleEventEmitter)="deleteCard($event)"
+  (viewEventEmitter)="viewTaskDataModal($event)"
+  (updateEventEmitter)="updateCardDataModal($event)"></app-task-card>
+  }
+ </div>
+</div>

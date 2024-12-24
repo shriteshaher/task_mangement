@@ -1,14 +1,12 @@
-.content-page{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content:space-between;
-     
-    margin: 10px;
-    padding: 5px;
-   
+.content-page {
+  display: flex;
+  flex-wrap: wrap;
+
+  margin: 10px;
+  padding: 5px;
 }
 
 ::ng-deep .error-snackbar {
-    background-color: red !important; /* Red color for error */
-    color: #fff; /* White text */
-  }
+  background-color: red !important; /* Red color for error */
+  color: #fff; /* White text */
+}

@@ -1,44 +1,39 @@
-.mat-mdc-card{
-    width: 100%;
-    max-width: 100%;
-    min-width: 300px;
-    padding: 10px;
-    margin: 0 auto;
-    margin-top: 5px;
-    box-sizing: border-box; 
-    border-color: #f2f0f4;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    
-   
-     .bi {
-        position: relative;
-        display: inline-block;
-        left:  80% ;
-        font-size: 20px; 
-        color: #3586E8;
-        margin-right: 15px;
-    }
-    .toolbar{
-        position: relative;
-        right: 5px;
+.mat-mdc-card {
+  min-width: 300px;
+  margin: 10px;
+  padding: 10px;
 
-       i{
-        margin-right: 3px;
-        //padding: 2px;
-       }
+  box-sizing: border-box;
+  border-color: #f2f0f4;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  .bi {
+    position: relative;
+    display: inline-block;
+    left: 80%;
+    font-size: 20px;
+    color: #3586e8;
+    margin-right: 15px;
+  }
+  .toolbar {
+    position: relative;
+    right: 5px;
+
+    i {
+      margin-right: 3px;
+      //padding: 2px;
     }
-    .mat-mdc-card-title{
-        font-size: 25px;
-        
+  }
+  .mat-mdc-card-title {
+    font-size: 25px;
+  }
+  .initially {
+    font-weight: bold;
+    font-size: 17px;
+  }
+  .mat-mdc-card-content {
+    div {
+      margin: 5px;
     }
-    .initially{
-        font-weight: bold;
-        font-size: 17px;
-    }
-    .mat-mdc-card-content{
-        div{
-            margin: 5px ;
-        }
-    }
-   
+  }
 }

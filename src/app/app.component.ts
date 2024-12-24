@@ -6,6 +6,7 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { AddTaskFormComponent } from './shared-component/add-task-form/add-task-form.component';
 import { TasksService } from './servicess/tasks.service';
 import { TaskDetail } from './servicess/DAO/TaskDetail';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 type flagDetails={
   isFilterForm:boolean,
@@ -26,12 +27,14 @@ export class AppComponent {
     private matIconRegistry: MatIconRegistry,
     private sanitizer: DomSanitizer,
     private taskSerivice: TasksService,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private snackBar: MatSnackBar
   ) {
     // this.matIconRegistry.addSvgIcon('filter',this.sanitizer.bypassSecurityTrustResourceUrl("assets/images/funnel.svg"))
   }
   ngOnInit() {
     this.getTaskDetails("");
+    
   }
   ngAfterViewInit() {
     this.navBar.openModalEvent.subscribe((event:flagDetails) => {
@@ -61,9 +64,9 @@ export class AppComponent {
       
     });}else{
       this.taskSerivice.getTaskDetails(searchText).subscribe((result) => {
-        console.log(result);
         this.task_details = result;
       },(err)=>{
+        alert("not found")
         this.task_details=[]
       });
     }
@@ -71,6 +74,7 @@ export class AppComponent {
 
   deleteCard(card_id: string) {
     this.taskSerivice.deleteTask(card_id).subscribe((res) => {
+      alert("Task Deleted Successfully")
       this.getTaskDetails("");
     });
   }
@@ -93,7 +97,7 @@ export class AppComponent {
     const dialogRef=this.openModalAddTaskForm()
     dialogRef.componentInstance.submitValueEventEmitter.subscribe((result) => {
       this.taskSerivice.addTask(result).subscribe((result) => {
-        console.log(result)
+        alert("Task Added Successfully")
        if(result){
         this.getTaskDetails("");
         dialogRef.close();
@@ -116,7 +120,7 @@ export class AppComponent {
         result.id=card_data.id
        this.taskSerivice.updateTask(result.id,result).subscribe(
         (res)=>{
-          console.log(res)
+          alert("Task Updated Successfully")
           this.getTaskDetails("")
           dialogRef.close()
         }

@@ -7,3 +7,8 @@
     padding: 5px;
    
 }
+
+::ng-deep .error-snackbar {
+    background-color: red !important; /* Red color for error */
+    color: #fff; /* White text */
+  }

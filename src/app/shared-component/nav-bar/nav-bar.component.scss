@@ -12,7 +12,7 @@
     font-weight: bold;
     //  border:2px red solid;
     padding: 20px;
-    ::ng-deep button {
+ button {
       min-width: 100px;
       height: 39px;
     }
@@ -47,14 +47,22 @@
   div,
   h2 {
     color: white;
+  
+
+  }
+  h2 {
+    margin-left: 5px;
   }
 }
 
 @media screen and (max-width: 600px) {
     .navbar{
-      
+      // margin: auto;
+     
          button {
             margin-top: 5px;
+           
+            //width: 90%;
            
         }
     }

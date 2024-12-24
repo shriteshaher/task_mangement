@@ -9,14 +9,19 @@ import { STATUS } from '../../servicess/constant';
 export class NavBarComponent {
   openModalEvent!:EventEmitter<Object>
   @Output()filterTextEvent!:EventEmitter<string>
+  isOpen = false;
   status=STATUS
   constructor(){
     this.openModalEvent=new EventEmitter<Object>()
     this.filterTextEvent=new EventEmitter<string>()
   }
 
+ 
+
+  toggleSidenav() {
+    this.isOpen = !this.isOpen;
+  }
   openModalAddTaskForm(){
-    console.log('open Modal')
     this.openModalEvent.emit({
       isAddTaskForm:true
     })
@@ -29,7 +34,6 @@ export class NavBarComponent {
     )
   }
   filterByStatus(status:any){
-    console.log(status.value)
     this.filterTextEvent.emit(status.value)
   
   }
